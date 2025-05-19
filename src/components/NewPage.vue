@@ -2,7 +2,7 @@
   <div>
     <h1>Vue Two-Way Binding Example</h1>
 
-    <h6>{{ greeting }}, {{ name  }}!</h6>
+    <h6>{{ greeting }}, {{ name }}!</h6>
 
     <input type="text" v-model="name" placeholder="Enter your name" />
 
@@ -15,17 +15,19 @@
 
     <button @click="clearName()">Clear</button>
     <button @click="uppercaseName()" :disabled="!name">Uppercase</button>
+
+    <li v-for="(value, key) in books" :key="key">{{ value.title }}</li>
   </div>
 </template>
-
 
 <script>
 /* eslint-disable */
 export default {
   data() {
     return {
-      name: "Reena",
+      name: "Jane Austen",
       greeting: "",
+      books:[{title:'Sense and Sensibility'},{title:'Pride and Prejudice'},{title:'Lady Susan'}]
     };
   },
   methods: {
