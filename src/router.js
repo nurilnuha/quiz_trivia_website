@@ -16,18 +16,18 @@ const router = new Router({
       children: [
         {
           path: "",
-          redirect: "HelloWorld",
+          redirect: "HomePage",
         },
         {
-          path: "HelloWorld",
-          name: "HelloWorld",
-          component: () => import("@/components/HelloWorld.vue"),
+          path: "HomePage",
+          name: "HomePage",
+          component: () => import("@/components/HomePage.vue"),
           props: true,
         },
         {
-          path: "NewPage",
-          name: "NewPage",
-          component: () => import("@/components/NewPage.vue"),
+          path: "/quiz/:id",
+          name: "Quiz",
+          component: () => import("@/components/QuizPage.vue"),
           props: true,
         },
       ],
